@@ -22,6 +22,7 @@ platform :ios do
             ENV['P12_KEY_PATH']
           else
             'ios-build-key.p12'
+            
           end,
         certificate_password: ENV['CERTIFICATE_PASSWORD'],
         keychain_name: 'ios-build.keychain',
@@ -146,7 +147,7 @@ platform :ios do
       scheme: ENV['SCHEME'],
       output_directory: File.dirname(ENV['OUTPUT_PATH']),
       output_name: File.basename(ENV['OUTPUT_PATH']),
-      clean: true,
+      clean: false,
       cloned_source_packages_path:
         if use_cloned_source_packages_path
           ENV['CLONED_SOURCE_PACKAGES_PATH']
